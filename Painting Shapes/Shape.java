@@ -3,10 +3,14 @@ package PaintingShapes;
 public abstract class Shape {
 	private String shapeName;
 	
-	abstract double area();
+	public abstract double area();
+	
+	public Shape (String shapeName) {
+		this.shapeName = shapeName;
+	}
 	
 	@Override
 	public String toString() {
-		return "Shape Name : " + shapeName;
+		return shapeName;
 	}
 }

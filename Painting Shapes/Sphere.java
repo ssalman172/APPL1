@@ -24,6 +24,6 @@ public class Sphere extends Shape  {
 	//Returns the sphere as a String.  
 	//-----------------------------------  
 	public String toString()  {  
-		return super.toString() + " of radius " + radius;   
+		return super.toString() + "\nRadius : " + radius + "\n";   
 	}  
 }  
