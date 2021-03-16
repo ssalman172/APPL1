@@ -3,7 +3,7 @@ package PaintingShapes;
 public abstract class Shape {
 	private String shapeName;
 	
-	abstract void area();
+	abstract double area();
 	
 	@Override
 	public String toString() {
