@@ -67,7 +67,7 @@ public class IntegerListTest  {
 				list.replaceAll(oldValAll,newValAll);
 			break;  
 			case 7:	
-				list.selectionSort();
+				list.sortDecreasing();
 			break;  
 			case 8:  
 				System.out.print("Enter the value to look for: ");   

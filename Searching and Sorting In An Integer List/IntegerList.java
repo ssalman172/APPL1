@@ -51,7 +51,7 @@ public class IntegerList  {
 			//find smallest element in list starting at location i   
 			minIndex = i;  
 			for (int j = i+1; j < list.length; j++)  
-				if (list[j] > list[minIndex])  
+				if (list[j] < list[minIndex])  
 				minIndex = j;  
 				//swap list[i] with smallest element  
 				int temp = list[i]; 
@@ -84,6 +84,19 @@ public class IntegerList  {
 			System.out.println("Old Value Not Found.");
 		}
 	}
+	
+	public void sortDecreasing()  {  
+		int minIndex;  
+		for (int i=0; i < list.length-1; i++)  {  
+			minIndex = i;  
+			for (int j = i+1; j < list.length; j++)  
+				if (list[j] > list[minIndex])  
+				minIndex = j;  
+				int temp = list[i]; 
+				list[i] = list[minIndex];  
+				list[minIndex] = temp;  
+		}  
+	}  
 	
 	public int binarySearchD(int target) {	
 		// Source : GeeksforGeeks
