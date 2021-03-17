@@ -30,28 +30,37 @@ public class IntegerListTest  {
 		int loc;  
 		switch(choice)  {  
 			case 0:  
-			System.out.println("Bye!");  
+				System.out.println("Bye!");  
 			break;  
 			case 1:  
-			System.out.println("How big should the list be?");   int size = scan.nextInt();  
-			list = new IntegerList(size);  
-			list.randomize();  
+				System.out.println("How big should the list be?");   
+				int size = scan.nextInt();  
+				list = new IntegerList(size);  
+				list.randomize();  
 			break;  
 			case 2:  
-			list.selectionSort();  
+				list.selectionSort();  
 			break;  
 			case 3:  
-			System.out.print("Enter the value to look for: ");   loc = list.search(scan.nextInt()); 
-			if (loc != -1)  
-			System.out.println("Found at location " + loc);   
-			else  
-			System.out.println("Not in list");  
+				System.out.print("Enter the value to look for: ");   
+				loc = list.search(scan.nextInt()); 
+				if (loc != -1)  
+				System.out.println("Found at location " + loc);   
+				else  
+				System.out.println("Not in list");  
 			break;  
 			case 4:  
-			list.print();  
+				list.print();  
+			break;  
+			case 5:  			
+				System.out.print("Insert Old Value : ");  	
+				int oldVal = scan.nextInt();
+				System.out.print("Insert New Value : ");  
+				int newVal = scan.nextInt();
+				list.replaceFirst(oldVal,newVal);
 			break;  
 			default:  
-			System.out.println("Sorry, invalid choice");  
+				System.out.println("Sorry, invalid choice");  
 		}  
 	}  
 	//-------------------------------------------------------   
@@ -61,7 +70,11 @@ public class IntegerListTest  {
 		System.out.println("\n Menu ");  
 		System.out.println(" ====");  
 		System.out.println("0: Quit");  
-		System.out.println("1: Create a new list (** do this first!! **)");   System.out.println("2: Sort the list using selection sort");   System.out.println("3: Find an element in the list using linear search");   System.out.println("4: Print the list");  
+		System.out.println("1: Create a new list (** do this first!! **)");   
+		System.out.println("2: Sort the list using selection sort");   
+		System.out.println("3: Find an element in the list using linear search");   
+		System.out.println("4: Print the list");
+		System.out.println("5: Find & Replace first found number");
 		System.out.print("\nEnter your choice: ");  
 	}  
 } 

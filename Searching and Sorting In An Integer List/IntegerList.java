@@ -29,7 +29,7 @@ public class IntegerList  {
 	//-------------------------------------------------------   
 	public void print()  {  
 		for (int i=0; i<list.length; i++)  
-			System.out.println(i + ":\t" + list[i]);  
+			System.out.println(i + " :\t" + list[i]);  
 	}  
 	//-------------------------------------------------------   
 	//return the index of the first occurrence of target in the list.   
@@ -59,4 +59,15 @@ public class IntegerList  {
 				list[minIndex] = temp;  
 		}  
 	}  
+	
+	public void replaceFirst(int oldVal, int newVal) {	
+		int loc = search(oldVal);
+		if (search(oldVal) != -1) {
+			list[loc] = newVal;
+			System.out.println("Old Value Has Been Changed.");
+		}
+		else {
+			System.out.println("Old Value Not Found.");
+		}
+	}
 }  
