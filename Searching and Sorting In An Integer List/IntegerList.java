@@ -73,9 +73,10 @@ public class IntegerList  {
 	
 	public void replaceAll(int oldVal, int newVal) {	
 		if (search(oldVal) != -1) {
-			for (int i=0; i<list.length-1; i++) {
-				int loc = search(oldVal);
-				list[loc] = newVal;
+			for (int i=0; i<list.length; i++) {
+				if (list[i] == oldVal) {
+					list[i] = newVal;
+				}
 			}
 			System.out.println("All Old Value Has Been Changed.");
 		}
