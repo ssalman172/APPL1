@@ -22,21 +22,38 @@ public class Salesperson implements Comparable  {
 	// Returns the sales person as a string.  
 	//-------------------------------------------  
 	public String toString()  {  
-		return lastName + ", " + firstName + ": \t" + totalSales;   
+		return firstName + " " + lastName + " : \t" + totalSales;   
 	}  
 	//-------------------------------------------  
 	// Returns true if the sales people have  
 	// the same name.  
 	//-------------------------------------------  
 	public boolean equals (Object other)  {  
-		return (lastName.equals(((Salesperson)other).getLastName()) &&   firstName.equals(((Salesperson)other).getFirstName()));   
+		return (lastName.equals(((Salesperson)other).getLastName()) && firstName.equals(((Salesperson)other).getFirstName()));   
 	}  
 	//--------------------------------------------------   
 	// Order is based on total sales with the name  
 	// (last, then first) breaking a tie.  
 	//--------------------------------------------------   
 	public int compareTo(Object other)  {  
-		int result;  
+		int result = 0;  
+		Salesperson otherObj = (Salesperson) other;
+		
+		if (this.totalSales < otherObj.totalSales) {
+			result = -1;
+		}
+		else if (this.totalSales > otherObj.totalSales) {
+			result = 1;
+		}
+		else if (this.totalSales == otherObj.totalSales) {
+			if (this.firstName == otherObj.firstName) {
+				result = this.lastName.compareTo(otherObj.lastName);
+			}
+			else {
+				result = this.firstName.compareTo(otherObj.firstName);
+			}
+		}
+		
 		return result;  
 	}  
 	
