@@ -51,7 +51,7 @@ public class IntegerList  {
 			//find smallest element in list starting at location i   
 			minIndex = i;  
 			for (int j = i+1; j < list.length; j++)  
-				if (list[j] < list[minIndex])  
+				if (list[j] > list[minIndex])  
 				minIndex = j;  
 				//swap list[i] with smallest element  
 				int temp = list[i]; 
@@ -65,6 +65,19 @@ public class IntegerList  {
 		if (search(oldVal) != -1) {
 			list[loc] = newVal;
 			System.out.println("Old Value Has Been Changed.");
+		}
+		else {
+			System.out.println("Old Value Not Found.");
+		}
+	}
+	
+	public void replaceAll(int oldVal, int newVal) {	
+		if (search(oldVal) != -1) {
+			for (int i=0; i<list.length-1; i++) {
+				int loc = search(oldVal);
+				list[loc] = newVal;
+			}
+			System.out.println("All Old Value Has Been Changed.");
 		}
 		else {
 			System.out.println("Old Value Not Found.");

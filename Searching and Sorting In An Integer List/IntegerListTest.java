@@ -54,10 +54,21 @@ public class IntegerListTest  {
 			break;  
 			case 5:  			
 				System.out.print("Insert Old Value : ");  	
-				int oldVal = scan.nextInt();
+				int oldValFirst = scan.nextInt();
 				System.out.print("Insert New Value : ");  
-				int newVal = scan.nextInt();
-				list.replaceFirst(oldVal,newVal);
+				int newValFirst = scan.nextInt();
+				list.replaceFirst(oldValFirst,newValFirst);
+			break;  
+			case 6:
+				System.out.print("Insert Old Value : ");  	
+				int oldValAll = scan.nextInt();
+				System.out.print("Insert New Value : ");  
+				int newValAll = scan.nextInt();
+				list.replaceAll(oldValAll,newValAll);
+			break;  
+			case 7:
+				System.out.print("Sorted Values : ");  	
+				list.selectionSort();
 			break;  
 			default:  
 				System.out.println("Sorry, invalid choice");  
@@ -75,6 +86,9 @@ public class IntegerListTest  {
 		System.out.println("3: Find an element in the list using linear search");   
 		System.out.println("4: Print the list");
 		System.out.println("5: Find & Replace first found number");
+		System.out.println("6: Find & Replace all found number");
+		System.out.println("7: Descending Sort");
+		System.out.println("8: Binary Search");
 		System.out.print("\nEnter your choice: ");  
 	}  
 } 
