@@ -83,4 +83,25 @@ public class IntegerList  {
 			System.out.println("Old Value Not Found.");
 		}
 	}
+	
+	public int binarySearchD(int target) {	
+		// Source : GeeksforGeeks
+		int left = 0;
+		int right = list.length - 1;
+		
+		while (list.length > 0) {
+	    	int mid = left + (right - left)/2;   
+	    	
+	    	if (list[mid] == target) {
+	    		return mid;
+	    	}
+	    	else if (list[mid] > target) {
+	    		left  = mid + 1;
+	    	} 
+	    	else {
+	    		right = mid - 1;
+	    	} 
+		}
+		return -1;
+	}
 }  

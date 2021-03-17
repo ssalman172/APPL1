@@ -45,9 +45,9 @@ public class IntegerListTest  {
 				System.out.print("Enter the value to look for: ");   
 				loc = list.search(scan.nextInt()); 
 				if (loc != -1)  
-				System.out.println("Found at location " + loc);   
+					System.out.println("Found at location " + loc);   
 				else  
-				System.out.println("Not in list");  
+					System.out.println("Not in list");  
 			break;  
 			case 4:  
 				list.print();  
@@ -66,9 +66,16 @@ public class IntegerListTest  {
 				int newValAll = scan.nextInt();
 				list.replaceAll(oldValAll,newValAll);
 			break;  
-			case 7:
-				System.out.print("Sorted Values : ");  	
+			case 7:	
 				list.selectionSort();
+			break;  
+			case 8:  
+				System.out.print("Enter the value to look for: ");   
+				loc = list.binarySearchD(scan.nextInt()); 
+				if (loc != -1)  
+					System.out.println("Found at location " + loc);   
+				else  
+					System.out.println("Not in list");  
 			break;  
 			default:  
 				System.out.println("Sorry, invalid choice");  
